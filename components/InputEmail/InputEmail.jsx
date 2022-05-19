@@ -4,7 +4,7 @@ import Input from '../Input/Input';
 
 const InputEmail = (props) => (
     <div
-      css={css`
+    className={css`
         width: 100%;
         direction: ltr;
         &::placeholder {

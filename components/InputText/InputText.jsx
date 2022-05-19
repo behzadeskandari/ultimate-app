@@ -4,7 +4,7 @@ import Input from '../Input/Input';
 
 const InputText = (props) => (
     <div
-      css={css`
+      className={css`
         width: 100%;
       `}
     >
