@@ -5,7 +5,7 @@ import { useTheme } from '@emotion/react'
 const Input = ({ type = 'text', placeholder, onChange }) => {
   const theme = useTheme()
    console.log('====================================')
-   console.log(theme,'themethemethemetheme')
+   console.log(theme,'themethemethemetheme');
    console.log('====================================')
   const handleOnChange = (event) => {
     onChange(event.target.value)

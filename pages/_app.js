@@ -2,9 +2,9 @@ import '../styles/globals.css'
 import theme from '../config/theme';
 
 function MyApp({ Component, pageProps }) {
-  return <ThemeProvider theme={theme}>
+  return (<ThemeProvider theme={theme}>
     <Component {...pageProps} />
-    </ThemeProvider>
+    </ThemeProvider>)
 }
 
 export default MyApp

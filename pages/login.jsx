@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -7,10 +8,21 @@ import { Button, InputEmail,InputPassword } from '../components';
 import FormControl from '../containers/FormControl/FormControl'
 
 export default function Login() {
+  const [formValue,setForm] = useState({});
+
   const handleSubmit = (event)=> {
     if(event) event.preventDefault();  
-    console.log('handleSubmit');
+
+    console.log('handleSubmit',formValue);
   }
+
+  const handleOnChange = (name,value) => {
+    setForm({
+      ...formValue,
+      [name]: value
+    })
+  }
+
   return (
     <div>
       <Head>
@@ -24,10 +36,10 @@ export default function Login() {
                 <>
                      <form onSubmit={handleSubmit}>
                          <FormControl>
-                            <InputEmail placeholder='email' />
+                            <InputEmail onChange={() => handleOnChange('email', value)} placeholder='email' />
                          </FormControl>
                          <FormControl>                        
-                            <InputPassword placeholder='password' />
+                            <InputPassword onChange={() => handleOnChange('password', value)} placeholder='password' />
                          </FormControl>
                          <FormControl> 
                             <Button type="submit">Submit</Button>
