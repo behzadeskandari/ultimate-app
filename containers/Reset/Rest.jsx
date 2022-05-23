@@ -2,7 +2,7 @@ import { Global, css, jsx } from '@emotion/react';
 
 const Reset = () => (
   <Global
-    styles={css`
+    className={css`
       html,
       body,
       div,
