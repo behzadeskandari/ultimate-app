@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import {css, jsx} from '@emotion/css';
@@ -26,8 +27,15 @@ export default function Home() {
             }
           `}>
                 Hover Over
+          <Link href="/register">
+            <a>register</a>
+          </Link>
+          
+          <Link href="/login">
+            <a>login</a>
+          </Link>
           </div>
-            
+          
       </main>
 
 

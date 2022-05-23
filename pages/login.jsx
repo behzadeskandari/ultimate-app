@@ -1,25 +1,25 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import {css, jsx} from '@emotion/css';
-import LayoutAuth from '../containers/LayoutAuth/LayoutAuth';
-import { Button, InputEmail,InputPassword } from '../components';
+import { css, jsx } from '@emotion/css'
+import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
+import { Button, InputEmail, InputPassword } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
 
 export default function Login() {
-  const [formValue,setForm] = useState({});
+  const [formValue, setForm] = useState({})
 
-  const handleSubmit = (event)=> {
-    if(event) event.preventDefault();  
+  const handleSubmit = (event) => {
+    if (event) event.preventDefault()
 
-    console.log('handleSubmit',formValue);
+    console.log('handleSubmit', formValue)
   }
 
-  const handleOnChange = (name,value) => {
+  const handleOnChange = (name, value) => {
     setForm({
       ...formValue,
-      [name]: value
+      [name]: value,
     })
   }
 
@@ -31,26 +31,28 @@ export default function Login() {
       </Head>
 
       <main>
- 
-            <LayoutAuth>
-                <>
-                     <form onSubmit={handleSubmit}>
-                         <FormControl>
-                            <InputEmail onChange={() => handleOnChange('email', value)} placeholder='email' />
-                         </FormControl>
-                         <FormControl>                        
-                            <InputPassword onChange={() => handleOnChange('password', value)} placeholder='password' />
-                         </FormControl>
-                         <FormControl> 
-                            <Button type="submit">Submit</Button>
-                         </FormControl> 
-                     </form>
-                 </>
-            </LayoutAuth>
+        <LayoutAuth>
+          <>
+            <form onSubmit={handleSubmit}>
+              <FormControl>
+                <InputEmail
+                  onChange={() => handleOnChange('email', value)}
+                  placeholder="email"
+                />
+              </FormControl>
+              <FormControl>
+                <InputPassword
+                  onChange={() => handleOnChange('password', value)}
+                  placeholder="password"
+                />
+              </FormControl>
+              <FormControl>
+                <Button type="submit">Submit</Button>
+              </FormControl>
+            </form>
+          </>
+        </LayoutAuth>
       </main>
-
-
-     
     </div>
   )
 }

@@ -6,14 +6,17 @@ import {css, jsx} from '@emotion/css';
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth';
 import { Button, H1, InputEmail,InputPassword } from '../components';
 import FormControl from '../containers/FormControl/FormControl'
+import Hyperlink from '../components/Hyperlink/Hyperlink';
+import {useRouter} from 'next/link';
 
 export default function Register() {
   const [formValue,setForm] = useState({});
-
+  const router = useRouter();
   const handleSubmit = (event)=> {
     if(event) event.preventDefault();  
 
     console.log('handleSubmit',formValue);
+    router.push('/');
   }
 
   const handleOnChange = (name,value) => {
@@ -45,6 +48,11 @@ export default function Register() {
                          <FormControl> 
                             <Button type="submit">Submit</Button>
                          </FormControl> 
+                         <div>
+                           <Hyperlink href="/login">
+                             <a>وارد شوید</a>
+                           </Hyperlink>
+                         </div>
                      </form>
                  </>
             </LayoutAuth>
