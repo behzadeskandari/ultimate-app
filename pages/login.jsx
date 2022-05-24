@@ -6,14 +6,16 @@ import { css, jsx } from '@emotion/css'
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
 import { Button, InputEmail, InputPassword } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
+import {useRouter} from 'next/link';
 
 export default function Login() {
   const [formValue, setForm] = useState({})
-
+  const router = useRouter();
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
 
-    console.log('handleSubmit', formValue)
+    console.log('handleSubmit', formValue);
+    router.push('/');
   }
 
   const handleOnChange = (name, value) => {
